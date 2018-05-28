@@ -19,7 +19,8 @@ export class ViewProductsComponent implements OnInit {
   filterProducts() {
     let filters = this;
     this.pList = this.products.getAll().filter(function(item:Product) { 
-      return item.price >= filters.fMinPrice &&  item.inStock >= filters.fMinAmount
+      return (!filters.fMinAmount || item.inStock >= filters.fMinAmount)
+          && (!filters.fMinPrice || item.price >= filters.fMinPrice)
           && (!filters.fMaxPrice || item.price <= filters.fMaxPrice)
           && (!filters.fMaxAmount || item.inStock <= filters.fMaxAmount);
     })

@@ -3,24 +3,24 @@
   <div class="fields">
     <div class="field">
       <label>Min Amount</label>
-      <input [(ngModel)]="fMinAmount" type="number" placeholder="Min Amount">
+      <input [(ngModel)]="fMinAmount" type="number" placeholder="Min Amount" (input)="filterProducts()">
     </div>
     <div class="field">
       <label>Max Amount</label>
-      <input [(ngModel)]="fMaxAmount" type="number" placeholder="Max Amount">
+      <input [(ngModel)]="fMaxAmount" type="number" placeholder="Max Amount" (input)="filterProducts()">
     </div>
     <div class="field">
       <label>Min Price</label>
-      <input [(ngModel)]="fMinPrice" type="number" placeholder="Min Price">
+      <input [(ngModel)]="fMinPrice" type="number" placeholder="Min Price" (input)="filterProducts()">
     </div>
     <div class="field">
       <label>Max Price</label>
-      <input [(ngModel)]="fMaxPrice" type="number" placeholder="Max Price">
+      <input [(ngModel)]="fMaxPrice" type="number" placeholder="Max Price" (input)="filterProducts()">
     </div>
-    <button (click)="filterProducts()">Refresh</button>
+    
   </div>
 </div>
-
+<br><button (click)="filterProducts()">Refresh</button><br>
 <table class="ui selectable inverted teal table">
   <thead>
     <tr>
