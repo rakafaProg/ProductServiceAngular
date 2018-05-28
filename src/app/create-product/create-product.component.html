@@ -1,0 +1,30 @@
+<h2>Create New Product</h2>
+<div class="ui form">
+    <div class="fields">
+      <div class="field">
+        <label>Id</label>
+        <input [(ngModel)]="id" type="number" placeholder="Id">
+      </div>
+      <div class="field">
+        <label>Name</label>
+        <input [(ngModel)]="name" type="text" placeholder="Name">
+      </div>
+      <div class="field">
+        <label>Min Amount</label>
+        <input [(ngModel)]="minAmount" type="number" placeholder="Min Amount">
+      </div>
+      <div class="field">
+        <label>Max Amount</label>
+        <input [(ngModel)]="maxAmount" type="number" placeholder="Max Amount">
+      </div>
+      <div class="field">
+        <label>In stock</label>
+        <input [(ngModel)]="inStock" type="number" placeholder="In Stock">
+      </div>
+      <div class="field">
+        <label>Price</label>
+        <input [(ngModel)]="price" type="number" placeholder="Price">
+      </div>
+      <button class="ui submit button" (click)="addProduct()">Add Product</button>
+    </div>
+  </div>

@@ -1,0 +1,48 @@
+<h3>Products List:</h3>
+<div class="ui form">
+  <div class="fields">
+    <div class="field">
+      <label>Min Amount</label>
+      <input [(ngModel)]="fMinAmount" type="number" placeholder="Min Amount">
+    </div>
+    <div class="field">
+      <label>Max Amount</label>
+      <input [(ngModel)]="fMaxAmount" type="number" placeholder="Max Amount">
+    </div>
+    <div class="field">
+      <label>Min Price</label>
+      <input [(ngModel)]="fMinPrice" type="number" placeholder="Min Price">
+    </div>
+    <div class="field">
+      <label>Max Price</label>
+      <input [(ngModel)]="fMaxPrice" type="number" placeholder="Max Price">
+    </div>
+    <button (click)="filterProducts()">Refresh</button>
+  </div>
+</div>
+
+<table class="ui selectable inverted teal table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Min Amount</th>
+      <th>Max Amount</th>
+      <th>In Stock</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of pList">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>{{product.minAmount}}</td>
+      <td>{{product.maxAmount}}</td>
+      <td>{{product.inStock}}</td>
+      <td>{{product.price}} ils</td>
+    </tr>
+    <tr *ngIf="!pList.length">
+      <td  colspan="6">There Are No Products That Match Your Search!</td>
+    </tr>
+  </tbody>
+</table>
